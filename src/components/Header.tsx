@@ -29,7 +29,7 @@ export function Header() {
           >
             <a href="#home" className="block">
               <Image 
-                src="https://see.fontimg.com/api/rf5/pg4LZ/NzBhNzJiYmE3ZTZhNDNhNzlmZDE3YzY1MjNhMzVlOTAub3Rm/QnJld1Rr/qurovademo-medium.png?r=fs&h=130&w=2000&fg=BE58EE&bg=FFFFFF&tb=1&s=65"
+                src="/images/brewtk-logo-purple"
                 alt="BrewTk Logo"
                 width={200}
                 height={24}
