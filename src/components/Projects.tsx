@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Globe, Database, Brain, Calendar, Target, Award, Users, TrendingUp, X } from 'lucide-react'
+import { Github, Globe, Database, Brain, Calendar, Target, Award, Users, TrendingUp, X } from 'lucide-react'
 import { useState } from 'react'
 import Image from 'next/image'
 
@@ -321,7 +321,7 @@ export function Projects() {
 
                 {/* Project Content */}
                 <div className="p-4 md:p-6">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-purple-600 transition-colors" itemProp="name">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-blue-700 transition-colors" itemProp="name">
                     {project.title}
                   </h3>
                   
@@ -334,7 +334,7 @@ export function Projects() {
                     {project.technologies.map((tech, techIndex) => (
                       <motion.span
                         key={tech}
-                        className="px-2 py-1 md:px-3 md:py-1 bg-gray-100 text-gray-700 rounded-full text-xs md:text-sm hover:bg-purple-100 hover:text-purple-700 transition-all duration-200 cursor-pointer border border-transparent hover:border-purple-200"
+                        className="px-2 py-1 md:px-3 md:py-1 bg-gray-100 text-gray-700 rounded-full text-xs md:text-sm hover:bg-blue-100 hover:text-blue-800 transition-all duration-200 cursor-pointer border border-transparent hover:border-blue-200"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                         initial={{ opacity: 0, y: 10 }}
@@ -348,16 +348,6 @@ export function Projects() {
 
                   {/* Project Links */}
                   <div className="flex space-x-3 md:space-x-4">
-                    <motion.a
-                      href={project.link}
-                      className="flex items-center text-purple-600 hover:text-purple-700 font-medium text-xs md:text-sm group/link"
-                      whileHover={{ x: 5 }}
-                      whileTap={{ x: 2 }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <ExternalLink className="w-3 h-3 md:w-4 md:h-4 mr-1 group-hover/link:translate-x-0.5 transition-transform" />
-                      Live Demo
-                    </motion.a>
                     <motion.a
                       href={project.github}
                       className="flex items-center text-gray-600 hover:text-gray-700 font-medium text-xs md:text-sm group/github"
@@ -373,7 +363,7 @@ export function Projects() {
 
                 {/* Hover Overlay */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-br from-blue-700/5 to-blue-900/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={false}
                 />
               </motion.div>
@@ -446,7 +436,7 @@ export function Projects() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       <div className="absolute bottom-4 left-4">
-                        <span className={`px-3 py-1 bg-${project.color}-100 text-${project.color}-700 rounded-full text-sm font-medium`}>
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${project.color === 'blue' ? 'bg-blue-100 text-blue-800' : project.color === 'green' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'}`}>
                           {project.category}
                         </span>
                       </div>
@@ -464,7 +454,7 @@ export function Projects() {
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"
+                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
                           >
                             {tech}
                           </span>
@@ -477,7 +467,7 @@ export function Projects() {
                       {/* Features */}
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                          <Award className="w-5 h-5 mr-2 text-purple-600" />
+                          <Award className="w-5 h-5 mr-2 text-blue-700" />
                           Key Features
                         </h3>
                         <ul className="space-y-2">
@@ -489,7 +479,7 @@ export function Projects() {
                               transition={{ delay: index * 0.1 }}
                               className="flex items-start"
                             >
-                              <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+                              <div className="w-1.5 h-1.5 bg-blue-700 rounded-full mt-2 mr-3 flex-shrink-0" />
                               <span className="text-gray-600 text-sm">{feature}</span>
                             </motion.li>
                           ))}
@@ -543,15 +533,6 @@ export function Projects() {
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-3">
                       <motion.a
-                        href={project.link}
-                        className="flex items-center justify-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        View Live Demo
-                      </motion.a>
-                      <motion.a
                         href={project.github}
                         className="flex items-center justify-center px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
                         whileHover={{ scale: 1.02 }}
@@ -586,7 +567,7 @@ export function Projects() {
             </p>
             <motion.a
               href="#contact"
-              className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl text-sm md:text-base"
+              className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl text-sm md:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

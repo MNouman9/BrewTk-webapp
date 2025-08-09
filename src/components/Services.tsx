@@ -32,9 +32,9 @@ export function Services() {
       title: 'AI Services',
       description: 'Intelligent solutions powered by machine learning and artificial intelligence.',
       icon: Brain,
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50',
-      iconColor: 'text-purple-600',
+      color: 'from-blue-700 to-blue-800',
+      bgColor: 'bg-blue-50',
+      iconColor: 'text-blue-800',
       features: ['Machine Learning', 'Data Analytics', 'Chatbots', 'Predictive Models'],
       stats: { projects: 45, satisfaction: '97%' }
     },
@@ -62,9 +62,9 @@ export function Services() {
       title: 'IT Consulting',
       description: 'Strategic technology consulting to help you make informed decisions for your business.',
       icon: Users,
-      color: 'from-indigo-500 to-indigo-600',
-      bgColor: 'bg-indigo-50',
-      iconColor: 'text-indigo-600',
+      color: 'from-blue-600 to-blue-700',
+      bgColor: 'bg-blue-50',
+      iconColor: 'text-blue-700',
       features: ['Technology Strategy', 'Architecture Review', 'Digital Transformation', 'Team Training'],
       stats: { projects: 60, satisfaction: '94%' }
     }
@@ -129,7 +129,7 @@ export function Services() {
                 </motion.div>
 
                 {/* Service Title */}
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-purple-600 transition-colors" itemProp="name">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-blue-800 transition-colors" itemProp="name">
                   {service.title}
                 </h3>
 
@@ -148,7 +148,7 @@ export function Services() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: featureIndex * 0.1 }}
                     >
-                      <div className="w-1 h-1 md:w-1.5 md:h-1.5 bg-purple-500 rounded-full mr-2 md:mr-3"></div>
+                      <div className="w-1 h-1 md:w-1.5 md:h-1.5 bg-blue-700 rounded-full mr-2 md:mr-3"></div>
                       {feature}
                     </motion.div>
                   ))}
@@ -157,7 +157,7 @@ export function Services() {
                 {/* Stats */}
                 <div className="flex justify-between items-center pt-3 md:pt-4 border-t border-gray-100">
                   <div className="text-xs md:text-sm text-gray-500">
-                    <span className="font-semibold text-purple-600">{service.stats.projects}</span> projects
+                    <span className="font-semibold text-blue-800">{service.stats.projects}</span> projects
                   </div>
                   <div className="text-xs md:text-sm text-gray-500">
                     <span className="font-semibold text-green-600">{service.stats.satisfaction}</span> satisfaction
@@ -166,7 +166,7 @@ export function Services() {
 
                 {/* Hover Overlay */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-indigo-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-br from-blue-700/10 to-blue-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={false}
                 />
               </motion.div>
@@ -194,20 +194,20 @@ export function Services() {
               whileTap={{ scale: 0.95 }}
             >
               <motion.div 
-                className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-purple-200 transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-blue-200 transition-colors"
                 whileHover={{ rotate: 360 }}
                 whileTap={{ rotate: 180 }}
                 transition={{ duration: 0.6 }}
               >
-                <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />
+                <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-800" />
               </motion.div>
               <motion.div 
-                className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-purple-600 transition-colors"
+                className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-blue-800 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
                 {stat.value}
               </motion.div>
-              <div className="text-xs md:text-sm text-gray-600 group-hover:text-purple-600 transition-colors">
+              <div className="text-xs md:text-sm text-gray-600 group-hover:text-blue-800 transition-colors">
                 {stat.label}
               </div>
             </motion.div>

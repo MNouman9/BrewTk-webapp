@@ -86,16 +86,21 @@ export const metadata: Metadata = {
     yahoo: 'your-yahoo-verification-code',
   },
   category: 'technology',
+  icons: {
+    icon: '/images/favicon.png',
+    shortcut: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  userScalable: true,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#7c3aed" },
-    { media: "(prefers-color-scheme: dark)", color: "#7c3aed" },
+    { media: "(prefers-color-scheme: light)", color: "#1a1a40" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1a40" },
   ],
 };
 
@@ -107,13 +112,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#7c3aed" />
-        <meta name="theme-color" content="#7c3aed" />
+        {/* Favicon is handled by app/icon.png */}
+        {/* Optional app icons/manifest; ensure files exist in /public before enabling */}
+        {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> */}
+        {/* <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /> */}
+        {/* <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> */}
+        {/* <link rel="manifest" href="/site.webmanifest" /> */}
+        <meta name="msapplication-TileColor" content="#1a1a40" />
+        <meta name="theme-color" content="#1a1a40" />
         
         {/* Structured Data */}
         <script
@@ -134,7 +140,7 @@ export default function RootLayout({
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+1-555-123-4567",
+              "telephone": "",
                 "contactType": "customer service",
                 "email": "hello@brewtk.com"
               },

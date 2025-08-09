@@ -4,36 +4,18 @@ import { motion } from 'framer-motion'
 import { Award, CheckCircle } from 'lucide-react'
 
 export function Certifications() {
-  const logos = [
-    // Cloud Platforms
-    { name: 'AWS', type: 'cloud', color: 'bg-orange-100 text-orange-700' },
-    { name: 'Microsoft Azure', type: 'cloud', color: 'bg-blue-100 text-blue-700' },
-    { name: 'Google Cloud', type: 'cloud', color: 'bg-green-100 text-green-700' },
-    
-    // Technologies
-    { name: 'React', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'Node.js', type: 'tech', color: 'bg-green-100 text-green-700' },
-    { name: 'Python', type: 'tech', color: 'bg-yellow-100 text-yellow-700' },
-    { name: 'TypeScript', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'Docker', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'Kubernetes', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'Terraform', type: 'tech', color: 'bg-purple-100 text-purple-700' },
-    { name: 'Jenkins', type: 'tech', color: 'bg-red-100 text-red-700' },
-    { name: 'MongoDB', type: 'tech', color: 'bg-green-100 text-green-700' },
-    { name: 'PostgreSQL', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'Redis', type: 'tech', color: 'bg-red-100 text-red-700' },
-    { name: 'TensorFlow', type: 'tech', color: 'bg-orange-100 text-orange-700' },
-    { name: 'FastAPI', type: 'tech', color: 'bg-green-100 text-green-700' },
-    { name: 'Vue.js', type: 'tech', color: 'bg-green-100 text-green-700' },
-    { name: 'Next.js', type: 'tech', color: 'bg-gray-100 text-gray-700' },
-    { name: 'Tailwind CSS', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'GraphQL', type: 'tech', color: 'bg-pink-100 text-pink-700' },
-    { name: 'WebRTC', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'WebSocket', type: 'tech', color: 'bg-blue-100 text-blue-700' },
-    { name: 'ELK Stack', type: 'tech', color: 'bg-orange-100 text-orange-700' },
-    { name: 'Prometheus', type: 'tech', color: 'bg-red-100 text-red-700' },
-    { name: 'Grafana', type: 'tech', color: 'bg-orange-100 text-orange-700' },
-    { name: 'Ansible', type: 'tech', color: 'bg-red-100 text-red-700' }
+  // DevOps tools only (icons expected at /public/images/devops/{slug}.svg)
+  const devopsLogos = [
+    { name: 'Docker', slug: 'docker', color: 'text-blue-600' },
+    { name: 'Kubernetes', slug: 'kubernetes', color: 'text-blue-700' },
+    { name: 'Terraform', slug: 'terraform', color: 'text-purple-700' },
+    { name: 'Jenkins', slug: 'jenkins', color: 'text-red-600' },
+    { name: 'Grafana', slug: 'grafana', color: 'text-orange-500' },
+    { name: 'Prometheus', slug: 'prometheus', color: 'text-red-700' },
+    { name: 'Elasticsearch', slug: 'elasticsearch', color: 'text-yellow-600' },
+    { name: 'Logstash', slug: 'logstash', color: 'text-yellow-700' },
+    { name: 'Kibana', slug: 'kibana', color: 'text-pink-600' },
+    { name: 'Ansible', slug: 'ansible', color: 'text-red-600' },
   ]
 
   const stats = [
@@ -76,7 +58,7 @@ export function Certifications() {
               key={stat.label}
               className="text-center p-6 bg-white rounded-xl shadow-sm"
             >
-              <div className="text-3xl font-bold text-purple-600 mb-2">
+              <div className="text-3xl font-bold text-blue-800 mb-2">
                 {stat.value}
               </div>
               <div className="text-gray-600 text-sm">
@@ -86,7 +68,7 @@ export function Certifications() {
           ))}
         </motion.div>
 
-        {/* Logo Slider */}
+        {/* DevOps Tools Marquee */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,31 +76,31 @@ export function Certifications() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="relative overflow-hidden">
-            {/* First row of logos */}
-            <div className="flex animate-scroll space-x-8 py-8">
-              {logos.map((logo, index) => (
+          <div className="relative overflow-hidden group">
+            <div className="flex strip space-x-8 py-6">
+              {[...devopsLogos, ...devopsLogos].map((logo, index) => (
                 <div
-                  key={`${logo.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center w-32 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300"
+                  key={`${logo.slug}-${index}`}
+                  className="flex-shrink-0 w-36 h-16 bg-white rounded-lg border border-gray-200 flex items-center justify-center transition-transform"
                 >
-                  <div className={`text-center px-4 py-2 rounded-lg ${logo.color} font-semibold text-sm`}>
+                  {/* Try to load icon; fallback to text if missing */}
+                  <img
+                    src={`/images/devops/${logo.slug}.svg`}
+                    alt={logo.name}
+                    className="h-8 w-auto filter grayscale opacity-80 group-hover:opacity-90 transition-all duration-200 hover:grayscale-0"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement
+                      target.style.display = 'none'
+                      const sibling = target.nextElementSibling as HTMLElement | null
+                      if (sibling) sibling.style.display = 'block'
+                    }}
+                  />
+                  <span
+                    className={`hidden font-semibold ${logo.color}`}
+                    style={{ filter: 'grayscale(100%)', opacity: 0.8 }}
+                  >
                     {logo.name}
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Second row of logos (duplicate for seamless loop) */}
-            <div className="flex animate-scroll-reverse space-x-8 py-8">
-              {logos.slice().reverse().map((logo, index) => (
-                <div
-                  key={`${logo.name}-reverse-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center w-32 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300"
-                >
-                  <div className={`text-center px-4 py-2 rounded-lg ${logo.color} font-semibold text-sm`}>
-                    {logo.name}
-                  </div>
+                  </span>
                 </div>
               ))}
             </div>
@@ -176,7 +158,7 @@ export function Certifications() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-purple-600 to-indigo-700 rounded-2xl p-12 text-white"
+          className="bg-gradient-to-r from-blue-800 to-blue-900 rounded-2xl p-12 text-white"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -234,7 +216,7 @@ export function Certifications() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-200"
+              className="inline-flex items-center px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors duration-200"
             >
               Start Your Project
             </a>
@@ -243,30 +225,17 @@ export function Certifications() {
       </div>
 
       <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+        @keyframes strip-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
-        
-        @keyframes scroll-reverse {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
+        .strip {
+          width: max-content;
+          animation: strip-scroll 30s linear infinite;
         }
-        
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-        
-        .animate-scroll-reverse {
-          animation: scroll-reverse 30s linear infinite;
+        /* Pause the strip when hovered */
+        .group:hover .strip {
+          animation-play-state: paused;
         }
       `}</style>
     </section>

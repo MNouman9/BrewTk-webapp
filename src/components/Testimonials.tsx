@@ -90,12 +90,12 @@ export function Testimonials() {
               {/* Quote Icon */}
               <div className="mb-4 md:mb-6">
                 <motion.div 
-                  className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-xl flex items-center justify-center"
+                  className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-xl flex items-center justify-center"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   whileTap={{ rotate: 180, scale: 0.9 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Quote className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />
+                  <Quote className="w-5 h-5 md:w-6 md:h-6 text-blue-800" />
                 </motion.div>
               </div>
 
@@ -114,7 +114,7 @@ export function Testimonials() {
               {/* Author */}
               <div className="flex items-center">
                 <motion.div 
-                  className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-indigo-600 rounded-full flex items-center justify-center mr-3 md:mr-4"
+                  className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-700 to-blue-900 rounded-full flex items-center justify-center mr-3 md:mr-4"
                   whileHover={{ scale: 1.1, rotate: 360 }}
                   whileTap={{ scale: 0.9, rotate: 180 }}
                   transition={{ duration: 0.6 }}
@@ -127,7 +127,7 @@ export function Testimonials() {
                   <div className="font-semibold text-gray-900 text-sm md:text-base">
                     {testimonial.name}
                   </div>
-                  <div className="text-xs md:text-sm text-purple-600">
+                  <div className="text-xs md:text-sm text-blue-800">
                     {testimonial.role}, {testimonial.company}
                   </div>
                 </div>
@@ -152,10 +152,10 @@ export function Testimonials() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1 md:mb-2 group-hover:text-purple-700 transition-colors">
+                <div className="text-2xl md:text-3xl font-bold text-blue-800 mb-1 md:mb-2 group-hover:text-blue-900 transition-colors">
                   98%
                 </div>
-                <div className="text-gray-600 text-xs md:text-sm group-hover:text-purple-600 transition-colors">
+                <div className="text-gray-600 text-xs md:text-sm group-hover:text-blue-800 transition-colors">
                   Client Satisfaction
                 </div>
               </motion.div>
@@ -165,10 +165,10 @@ export function Testimonials() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1 md:mb-2 group-hover:text-purple-700 transition-colors">
+                <div className="text-2xl md:text-3xl font-bold text-blue-800 mb-1 md:mb-2 group-hover:text-blue-900 transition-colors">
                   4.9/5
                 </div>
-                <div className="text-gray-600 text-xs md:text-sm group-hover:text-purple-600 transition-colors">
+                <div className="text-gray-600 text-xs md:text-sm group-hover:text-blue-800 transition-colors">
                   Average Rating
                 </div>
               </motion.div>
@@ -178,10 +178,10 @@ export function Testimonials() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1 md:mb-2 group-hover:text-purple-700 transition-colors">
+                <div className="text-2xl md:text-3xl font-bold text-blue-800 mb-1 md:mb-2 group-hover:text-blue-900 transition-colors">
                   95%
                 </div>
-                <div className="text-gray-600 text-xs md:text-sm group-hover:text-purple-600 transition-colors">
+                <div className="text-gray-600 text-xs md:text-sm group-hover:text-blue-800 transition-colors">
                   Project Success Rate
                 </div>
               </motion.div>
@@ -191,10 +191,10 @@ export function Testimonials() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1 md:mb-2 group-hover:text-purple-700 transition-colors">
+                <div className="text-2xl md:text-3xl font-bold text-blue-800 mb-1 md:mb-2 group-hover:text-blue-900 transition-colors">
                   24/7
                 </div>
-                <div className="text-gray-600 text-xs md:text-sm group-hover:text-purple-600 transition-colors">
+                <div className="text-gray-600 text-xs md:text-sm group-hover:text-blue-800 transition-colors">
                   Support Available
                 </div>
               </motion.div>
@@ -210,7 +210,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="mt-12 md:mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-blue-800 to-blue-900 rounded-2xl p-8 md:p-12 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
               Ready to Join Our Success Stories?
             </h3>
@@ -219,7 +219,7 @@ export function Testimonials() {
             </p>
             <motion.a
               href="#contact"
-              className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 text-sm md:text-base"
+              className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-white text-blue-800 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 text-sm md:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

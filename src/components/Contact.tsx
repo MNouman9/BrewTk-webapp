@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Mail, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react'
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -34,14 +34,8 @@ export function Contact() {
       icon: Mail
     },
     {
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 8am to 6pm',
-      icon: Phone
-    },
-    {
       title: 'Office',
-      value: 'San Francisco, CA',
+      value: 'Lahore, Pakistan',
       description: 'Visit us at our office',
       icon: MapPin
     }
@@ -221,10 +215,10 @@ export function Contact() {
                       onChange={handleChange}
                       required
                       autoComplete="name"
-                      className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base ${
+                       className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base ${
                         errors.name ? 'border-red-300 bg-red-50' : 'border-gray-300'
                       }`}
-                      placeholder="John Doe"
+                      placeholder="John Cena"
                       whileFocus={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -257,10 +251,10 @@ export function Contact() {
                       onChange={handleChange}
                       required
                       autoComplete="email"
-                      className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base ${
+                     className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base ${
                         errors.email ? 'border-red-300 bg-red-50' : 'border-gray-300'
                       }`}
-                      placeholder="john@company.com"
+                      placeholder="johncena@wwe.com"
                       whileFocus={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -294,8 +288,8 @@ export function Contact() {
                       value={formData.company}
                       onChange={handleChange}
                       autoComplete="organization"
-                      className="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base"
-                      placeholder="Your Company"
+                     className="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base"
+                      placeholder="WWE Inc."
                       whileFocus={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -317,14 +311,14 @@ export function Contact() {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base ${
+                     className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-colors text-gray-900 text-sm md:text-base ${
                         errors.service ? 'border-red-300 bg-red-50' : 'border-gray-300'
                       }`}
                       whileFocus={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <option value="">Select a service</option>
+                      <option value="">What are you looking for ?</option>
                       {services.map((service) => (
                         <option key={service} value={service}>
                           {service}
@@ -359,7 +353,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors resize-none text-gray-900 text-sm md:text-base ${
+                    className={`w-full px-3 py-2.5 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-colors resize-none text-gray-900 text-sm md:text-base ${
                       errors.message ? 'border-red-300 bg-red-50' : 'border-gray-300'
                     }`}
                     placeholder="Tell us about your project, goals, and timeline..."
@@ -384,7 +378,7 @@ export function Contact() {
                   className={`w-full py-3 md:py-4 px-4 md:px-6 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center group shadow-lg hover:shadow-xl text-sm md:text-base ${
                     isSubmitting
                       ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
-                      : 'bg-purple-600 text-white hover:bg-purple-700'
+                      : 'bg-blue-700 text-white hover:bg-blue-800'
                   }`}
                   whileHover={!isSubmitting ? { scale: 1.02 } : {}}
                   whileTap={!isSubmitting ? { scale: 0.98 } : {}}
@@ -437,18 +431,18 @@ export function Contact() {
                   whileTap={{ x: 5 }}
                 >
                   <motion.div 
-                    className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-purple-200 transition-colors"
+                    className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-200 transition-colors"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     whileTap={{ rotate: 180, scale: 0.9 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <info.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />
+                    <info.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-800" />
                   </motion.div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors text-sm md:text-base">
+                    <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-800 transition-colors text-sm md:text-base">
                       {info.title}
                     </h4>
-                    <p className="text-purple-600 font-medium mb-1 group-hover:text-purple-700 transition-colors text-sm md:text-base">
+                    <p className="text-blue-800 font-medium mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-base">
                       {info.value}
                     </p>
                     <p className="text-gray-600 text-xs md:text-sm group-hover:text-gray-700 transition-colors">
@@ -465,7 +459,7 @@ export function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-purple-50 rounded-xl p-4 md:p-6 hover:bg-purple-100 transition-colors duration-300 cursor-pointer"
+              className="bg-blue-50 rounded-xl p-4 md:p-6 hover:bg-blue-100 transition-colors duration-300 cursor-pointer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -489,7 +483,7 @@ export function Contact() {
                     whileTap={{ x: 2 }}
                   >
                     <motion.div 
-                      className="w-1.5 h-1.5 md:w-2 md:h-2 bg-purple-500 rounded-full mr-2 md:mr-3 group-hover:bg-purple-600 transition-colors"
+                      className="w-1.5 h-1.5 md:w-2 md:h-2 bg-blue-700 rounded-full mr-2 md:mr-3 group-hover:bg-blue-800 transition-colors"
                       whileHover={{ scale: 1.5 }}
                       whileTap={{ scale: 0.8 }}
                     />

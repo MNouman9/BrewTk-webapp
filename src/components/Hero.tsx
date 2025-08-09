@@ -35,7 +35,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-purple-50 via-white to-indigo-50 relative overflow-hidden" role="banner" aria-label="Hero section">
+    <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-blue-100 relative overflow-hidden" role="banner" aria-label="Hero section">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -48,7 +48,7 @@ export function Hero() {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-20 left-20 w-16 h-16 md:w-32 md:h-32 bg-purple-200 rounded-full opacity-20"
+          className="absolute top-20 left-20 w-16 h-16 md:w-32 md:h-32 bg-blue-200 rounded-full opacity-20"
         />
         <motion.div
           animate={{
@@ -60,7 +60,7 @@ export function Hero() {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-40 right-20 w-12 h-12 md:w-24 md:h-24 bg-indigo-200 rounded-full opacity-20"
+          className="absolute top-40 right-20 w-12 h-12 md:w-24 md:h-24 bg-blue-300 rounded-full opacity-20"
         />
         <motion.div
           animate={{
@@ -90,10 +90,10 @@ export function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 rounded-full bg-purple-100 text-purple-700 text-xs md:text-sm font-medium hover:bg-purple-200 transition-colors duration-200 cursor-pointer group"
+                className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 rounded-full bg-blue-100 text-blue-800 text-xs md:text-sm font-medium hover:bg-blue-200 transition-colors duration-200 cursor-pointer group"
               >
                 <motion.span 
-                  className="w-1.5 h-1.5 md:w-2 md:h-2 bg-purple-600 rounded-full mr-2"
+                  className="w-1.5 h-1.5 md:w-2 md:h-2 bg-blue-700 rounded-full mr-2"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -109,17 +109,7 @@ export function Hero() {
               >
                 Transform Your Business with{' '}
                 <motion.span 
-                  className="text-purple-600"
-                  animate={{ 
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  style={{
-                    background: 'linear-gradient(90deg, #7c3aed, #a855f7, #7c3aed)',
-                    backgroundSize: '200% 200%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
+                  className="text-blue-700 md:text-blue-800"
                 >
                   Cutting-Edge
                 </motion.span> IT Solutions
@@ -145,7 +135,7 @@ export function Hero() {
             >
               <motion.a
                 href="#contact"
-                className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-200 group shadow-lg hover:shadow-xl text-sm md:text-base"
+                className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all duration-200 group shadow-lg hover:shadow-xl text-sm md:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -166,10 +156,10 @@ export function Hero() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                <div className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors">
                   {counts.clients}+
                 </div>
-                <div className="text-xs md:text-sm text-gray-600 group-hover:text-purple-600 transition-colors">Happy Clients</div>
+                <div className="text-xs md:text-sm text-gray-600 group-hover:text-blue-800 transition-colors">Happy Clients</div>
               </motion.div>
               <motion.div 
                 className="text-center group cursor-pointer"
@@ -177,10 +167,10 @@ export function Hero() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                <div className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors">
                   {counts.projects}+
                 </div>
-                <div className="text-xs md:text-sm text-gray-600 group-hover:text-purple-600 transition-colors">Projects Completed</div>
+                <div className="text-xs md:text-sm text-gray-600 group-hover:text-blue-800 transition-colors">Projects Completed</div>
               </motion.div>
               <motion.div 
                 className="text-center group cursor-pointer"
@@ -188,10 +178,10 @@ export function Hero() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                <div className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors">
                   {counts.support}/7
                 </div>
-                <div className="text-xs md:text-sm text-gray-600 group-hover:text-purple-600 transition-colors">Support</div>
+                <div className="text-xs md:text-sm text-gray-600 group-hover:text-blue-800 transition-colors">Support</div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -204,12 +194,12 @@ export function Hero() {
             className="relative mt-8 lg:mt-0"
           >
             <motion.div 
-              className="relative bg-gradient-to-br from-purple-600 to-indigo-700 rounded-2xl p-4 md:p-8 shadow-2xl cursor-pointer"
+              className="relative bg-gradient-to-br from-blue-800 to-blue-900 rounded-2xl p-4 md:p-8 shadow-2xl cursor-pointer"
               whileHover={{ scale: 1.02, rotateY: 5 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-indigo-700/20 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-800/20 to-blue-900/20 rounded-2xl"></div>
               
               {/* Interactive Dashboard */}
               <div className="relative z-10 space-y-3 md:space-y-4">

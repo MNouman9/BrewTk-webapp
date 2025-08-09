@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook } from 'lucide-react'
-import Image from 'next/image'
+import { Mail, MapPin, Linkedin, Twitter, Github, Facebook } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -55,15 +54,15 @@ export function Footer() {
               viewport={{ once: true }}
               className="lg:col-span-2"
             >
-              <div className="mb-4">
-                <Image 
-                  src="/images/brewtk-logo-white"
-                  alt="BrewTk Logo"
-                  width={200}
-                  height={32}
-                  className="h-8 md:h-10 w-auto"
-                  priority
-                />
+              <div className="mb-4 select-none" aria-label="BrewTk">
+                <span
+                  className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none"
+                  style={{ fontFamily: 'Mulish, system-ui, sans-serif' }}
+                >
+                  <span style={{ color: '#ffb400' }}>Brew</span>
+                  <span style={{ color: '#00adb5' }}>Tk</span>
+                  <span style={{ color: '#ff5757' }}>.</span>
+                </span>
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 Empowering businesses with innovative technology solutions. 
@@ -78,12 +77,8 @@ export function Footer() {
                   <span>hello@brewtk.com</span>
                 </div>
                 <div className="flex items-center text-gray-400">
-                  <Phone className="w-4 h-4 mr-3" />
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center text-gray-400">
                   <MapPin className="w-4 h-4 mr-3" />
-                  <span>San Francisco, CA</span>
+                  <span>Lahore, Pakistan</span>
                 </div>
               </div>
             </motion.div>

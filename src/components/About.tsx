@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle, Award, Target, Users, Star, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react'
+import { CheckCircle, Award, Target, Users, Star, Linkedin, Mail, ExternalLink } from 'lucide-react'
 import { useState } from 'react'
 
 export function About() {
@@ -47,56 +47,28 @@ export function About() {
 
   const team = [
     {
-      name: 'Sarah Johnson',
-      role: 'CEO & Founder',
-      expertise: 'Strategic Leadership, Business Development',
-      bio: 'Sarah has over 15 years of experience in technology leadership and business strategy. She founded BrewTk with a vision to democratize technology solutions for businesses of all sizes.',
-      achievements: ['Led 50+ successful projects', 'Former VP at TechCorp', 'MBA from Stanford'],
+      name: 'Nouman Nadeem',
+      role: 'Co-Founder',
+      expertise: 'Technology Leadership, Full-Stack Engineering',
+      bio: 'Nouman leads engineering and product delivery, bringing hands-on experience in modern web, cloud, and AI solutions.',
+      achievements: ['Led complex web & cloud deliveries', 'AI/ML solution design', 'Open source contributions'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'sarah@brewtk.com'
+        linkedin: 'https://www.linkedin.com/in/nouman-nadeem/',
+        email: 'nouman@brewtk.com'
       },
-      color: 'from-purple-400 to-indigo-600'
+      color: 'from-blue-600 to-blue-800'
     },
     {
-      name: 'Michael Chen',
-      role: 'CTO',
-      expertise: 'Technology Architecture, Cloud Solutions',
-      bio: 'Michael is a technology visionary with expertise in cloud architecture and scalable systems. He has architected solutions for Fortune 500 companies.',
-      achievements: ['AWS Solutions Architect', '15+ years in tech', 'Open source contributor'],
+      name: 'Farhan Rauf',
+      role: 'Co-Founder',
+      expertise: 'Business Strategy, Client Success',
+      bio: 'Farhan drives strategy and client success, ensuring outcomes that align with business goals and measurable impact.',
+      achievements: ['Scaled delivery teams', 'Customer success leadership', 'Process optimization'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'michael@brewtk.com'
+        linkedin: 'https://www.linkedin.com/in/farhan-rauf-ch/',
+        email: 'farhan@brewtk.com'
       },
-      color: 'from-blue-400 to-cyan-600'
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Head of Design',
-      expertise: 'UX/UI Design, Product Strategy',
-      bio: 'Emily brings creativity and user-centered design thinking to every project. She has designed award-winning digital experiences for global brands.',
-      achievements: ['Design award winner', '10+ years in UX', 'Adobe certified expert'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'emily@brewtk.com'
-      },
-      color: 'from-pink-400 to-rose-600'
-    },
-    {
-      name: 'David Kim',
-      role: 'Lead Developer',
-      expertise: 'Full-Stack Development, AI/ML',
-      bio: 'David is a full-stack developer with deep expertise in modern web technologies and artificial intelligence. He leads our development team.',
-      achievements: ['Full-stack expert', 'AI/ML specialist', 'Open source maintainer'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'david@brewtk.com'
-      },
-      color: 'from-green-400 to-emerald-600'
+      color: 'from-blue-500 to-blue-700'
     }
   ]
 
@@ -353,10 +325,14 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                 >
-                  {Object.entries(member.social).map(([platform, url]) => (
+                  {Object.entries(member.social).map(([platform, url]) => {
+                    const href = platform === 'email' ? `mailto:${url}` : url
+                    return (
                     <motion.a
                       key={platform}
-                      href={url}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-purple-100 transition-colors"
                       whileHover={{ scale: 1.2, y: -2 }}
                       whileTap={{ scale: 0.9 }}
@@ -365,7 +341,7 @@ export function About() {
                       {platform === 'twitter' && <Twitter className="w-4 h-4 text-gray-600" />}
                       {platform === 'email' && <Mail className="w-4 h-4 text-gray-600" />}
                     </motion.a>
-                  ))}
+                  )})}
                 </motion.div>
 
                 {/* Expanded Bio */}
